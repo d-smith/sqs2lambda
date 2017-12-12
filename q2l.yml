@@ -56,6 +56,9 @@ Resources:
           S3Key: !Ref ZipFileName
       Runtime: "python2.7"
       Timeout: 60
+      Environment:
+        Variables:
+          QUEUE_URL: !Ref TaskQueue
 
   LambdaExecutionRole:
     Type: AWS::IAM::Role
